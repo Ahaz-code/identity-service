@@ -7,13 +7,13 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of the application files
 COPY . .
 
-# Expose port
-EXPOSE 3000
+# Expose port (Vite's default port is 5173)
+EXPOSE 5173
 
 # Command to run the application
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
